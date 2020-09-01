@@ -1,0 +1,27 @@
+Q. How do I avoid circular includes?
+   1. You can use either #ifndef MYHEADER_H
+                         #define MYHEADER_H
+                         //body
+                         #endif
+   2. You could #pragma once
+                //body
+
+Q. What do argc, and argv[]?
+   1. argc gives the number of arguments passed to the program, and argv
+   contains the. Actual parameters start at argument one or argv[1].
+
+Q. Why shouldn't I use printf and scanf?
+   1. printf() and scanf() family of functions do not provide any type safety.
+
+Q. What are some nested name space examples in C++17?
+   1. namespace MyLibraries::Networking::FTP {
+    /* … */
+    }
+
+    MyLibraries, Networking, and FTP are all namespaces.
+
+Q.  How can we alias a namespace?
+    1. namespace MyFTP = MyLibraries::Networking::FTP;
+
+Q.  What is the type of enum i should use?
+    1. You should use the type-safe enum.
