@@ -25,3 +25,29 @@ Q.  How can we alias a namespace?
 
 Q.  What is the type of enum i should use?
     1. You should use the type-safe enum.
+
+Q. What does a pointer represent?
+   1. points at the dynamically allocated heap memory, variable on the stack, 
+   or another pointer.
+
+Q. What is a null pointer.
+   1. A null pointer is a special default that no valid pointer will ever have.
+   and converts to false when used in Boolean expressions
+
+Q. What steps should I take in deleting memory?
+   1. delete the memory, then set the location to nullptr
+
+Q. What are some uses of const?
+   1. Making a variable const so that its value cannot be changed by someone else.
+
+Q. How should objects be passed to functions?
+   1. Prefer to pass it by const reference instead of value, pass by non-const 
+   reference if the function needs to modify the object.
+
+Q. What side effects does auto have?
+   1. auto strips away const and ref so if you want auto const and ref store it
+   like this: const auto& f2 = foo();
+
+Q. What is another way to deduce type?
+   1. Using decltype, which keeps the const and ref, ex.: 
+   decltype(foo()) f2 = foo();
