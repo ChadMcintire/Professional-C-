@@ -51,3 +51,10 @@ Q. What side effects does auto have?
 Q. What is another way to deduce type?
    1. Using decltype, which keeps the const and ref, ex.: 
    decltype(foo()) f2 = foo();
+
+Q. Why should you use references instead of pointers?
+   1. Safer because they don't deal directly with memory addresses and cannot 
+   be nullptr.
+
+Q. Where can I find a good documentation creator for C++?
+   1.Doxygen (available at www.doxygen.org)
