@@ -1,0 +1,58 @@
+Q. When should I use shared_ptr or unique_ptr?
+   Your default pointer should be unique, only use shared_ptr when you really
+   need to share a resource.
+
+Q. How should I create a unique_ptr.
+   Always use make_unique() to create a unique_ptr.
+
+Q. How can I get direct access to the underlying pointer of a unique pointer.
+   Use get() method.
+
+Q. What are some ways I can release a unique_ptr and set it to null.
+   ptr.reset(); //Free resource and set it to nullptr
+   ptr.reset(new Simple()); // Free resource and set to a new Simple instance.
+   
+   Simple* simple = mySimpleSmartPtr.release(); // Release ownership
+   // Use the simple pointer
+   delete simple;
+   simple = nullptr;
+
+Q. Can a unique_ptr be copied?
+   No, but it can be moved, this is used to explicitly move ownership.
+
+Q. How do you use custom deleters for unique_ptr's?
+
+Q. How should shared pointers be created?
+   Always use make_shared() to create a shared_ptr.
+
+Q. What is the correct way to make a new shared pointer?
+   Make a new copy of the pointer as follows:
+   void noDoubleDelete()'
+   {
+       auto smartPtr1 = make_shared<Simple>();
+       shared_ptr<Simple> smartPtr2(smartPtr1);
+   }
+
+Q. What is aliasing in regards to shared pointers?
+
+Q. What is a weak_ptr and what is it used for?
+   A weak_ptr does not own the resource, so the shared_ptr is not prevented
+   from deallocating the resource. A weak_ptr does not destroy the pointed-to
+   resource when the weak_ptr is destroyed (for example when it goes out of 
+   scope. 
+
+   A weak_ptr can be used to see if a resource has been freed by the associated
+   shared_ptr or not.
+
+Q. What are the ways we can get access to the pointer stored in a weak_ptr,
+   you need to convert it to a shared_ptr?
+
+   1. Use the lock() method on a weak_ptr instance, which return a shared_ptr.
+   The returned shared_ptr is nullptr if the shared_ptr associated with the
+   weak_ptr has been deallocated in the meantime.
+
+   2. Create a new shared_ptr instance and give a weak_ptr as argument to the 
+   shared_ptr constructor. THis throws an std::bad_weak_ptr exception if the
+   shared_ptr associated with the weak_ptr has been deallocated.
+
+
