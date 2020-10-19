@@ -1,0 +1,52 @@
+Q. What is the default access specifier for classes in cpp?
+   The default is for classes to be private. All member declarations before
+   the access specifier have the private access specification.
+
+Q. What is the default access specifier for structs in cpp?
+   The default is public.
+
+Q. What should I us a struct or a class if I only need public access?
+   It is customary to use a struct. 
+   
+Q. What does the arrow operator do for a class?
+   The arrow combines dereferencing (*) and member access (.). 
+
+Q. What order does the custructor initializer use for initializing.
+   They initialize data members in the order that they appear in the class
+   definition, hot their order in the ctor-initializer.
+
+Q. When does a Constructor-initializer allow initialization of data members?
+   Ctor-initializers allow initialization of data members at the time of their
+   creation.
+
+Q. What should you pass by value and what by reference?
+   Pass by value: ints, doubles, other primitive types. string_views. 
+
+   Pass by reference: Object, functions, etc.
+
+Q. What is a delegating constructor and how does it work.
+   Allow constructors to call another constructor from the same class.
+
+   This call cannot be placed in the constructor body, it must be in the 
+   ctor-initalizer and it must be the only member-initializer in the list. 
+
+Q. How do you tell if two objects are the same?
+   If the pointer are the equal, that means that they point to the same space in memory.
+
+Q. What is this?
+   This a pointer to the left hand side.
+
+Q. What do assignment operators return? 
+   All assignment operators return *this.
+
+Q. How do I make the compiler generate the copy constructor or assignment copy constructor
+   if the class has a user declared copy assignment operator or destructor?
+
+   By adding = default to the constructor or operator you can generate the code.
+
+Q. How do you distinguish between a copying and assignment?
+   Things that look like declaration are going to be copies. Once the object
+   has been constructed, it is likely an assignment.
+
+
+   
