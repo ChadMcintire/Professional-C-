@@ -1,0 +1,55 @@
+Q. When should one write their own assignemnt operator or copy constructor?
+   When you have dynamically allocated memory in a class to provide a deep copy.
+
+Q. How do you prevent anyone from passing an object by value or return an 
+   object from a function or a method, or assign to it?
+   Add = delete to your operator= or copy constructor.
+
+Q. What if the compile doesn't allow the explicit deleting of member functions?
+   If your compiler doesn’t support explicitly deleting member functions, 
+   then you can disallow copying and assigning by making your copy constructor 
+   and assignment operator private without any implementation.
+   
+Q. How do you cast an lvalue to an rvalue?
+   By using the std::move() function.
+
+Q. When should you implement a destructor, copy constructor, move constructor, 
+   copy assignment operator, and move assignment operator.
+
+   If you have dynamically allocated memory in your class then you should
+   implement these. This is called the Rule of Five.
+
+Q. What happens when a compiler finds a move constuctor?
+   The object are moved instead of copied. 
+
+Q. What happens if there is no implementation of move constructor or
+   move assignment operator.
+
+Q. How do you change values in const methods?
+   Use the mutable key word.
+
+Q. What is Scott Meyer’s const_cast() pattern?
+
+Q. What is safer inlining or #define and why?
+   #inlining a method is safer.
+
+Q. Should inlines be defined in header files?
+   Compilers do not require you to put definitions of inline methods in header
+   files.
+
+Q. Is there alternate syntax for declaring inline methods?
+   If you place the method definition directly in the class definition.
+
+Q. What can you do with default arguments that you can't do with method
+   overloading?
+   You can do with default arguments anthing you can do with method overloading.
+
+Q. What is a static data members?
+   It is a data member associated with a class instead of an object.
+   You can think of static data members as global variables specific to a 
+   class. Static data is zero-initialized by default. Static pointers are
+   initialized to nullptr.
+
+Q. Can a static member be inline?
+   Yes, the benefit of this is that you do not have to allocate space for them
+   in a source file.
