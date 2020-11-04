@@ -1,0 +1,27 @@
+Q. What is the difference between private and protected.
+   Derived classes have access to protected methods.
+
+Q. What does final do for a class?
+   It it is a keyword theat means trying to inherit from it will result in
+   a compilation error.
+
+Q. What does override do, and when should you use it?
+   Makes it so that if you are suppose to be overriding a method from a base
+   class, it is required.
+
+Q. What happens when you override a non-virtual function?
+   Attempting to override a non-virtual method hides the base class definition,
+   and it will only be used in the context of the derived class.
+
+Q. When should you make methods virtual.
+   Always make methods virtual unless you can't take the look up hit for the
+   virtual table. This should always be done for a destructor unless the class
+   is final.
+
+Q. When does slicing not occur for a class with a base class.
+   Slicing does not occur if a derived class is assigned to a pointer or
+   reference to its base class.
+
+Q. How does C++ using compile-time type of expression to bind default arguments
+   not the run-time type effect default arguments?
+   Default arguments are not "inherited" in C++. 
